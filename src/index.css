@@ -1,3 +1,94 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+@font-face {
+  font-family: 'HypotheticalmoonofMercury';
+  src: url('/fonts/HypotheticalmoonofMercury.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+html,
+body {
+  text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: antialiased !important;
+}
+
+.nebula {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  animation: 200s scroll infinite linear;
+}
+.menu a.active {
+  color: theme(colors.steelblue);
+}
+
+#hamburger {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  margin: 5px 0;
+  transition: 0.4s;
+}
+
+.open .bar1 {
+  transform: translate(0, 11px) rotate(-45deg);
+}
+.open .bar2 {
+  opacity: 0;
+}
+.open .bar3 {
+  transform: translate(0, -5px) rotate(45deg);
+}
+
+#fullpage {
+  display: none;
+  position: absolute;
+  z-index: 60;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-size: contain;
+  background-repeat: no-repeat no-repeat;
+  background-position: center center;
+  background-color: black;
+}
+
+@-webkit-keyframes scroll {
+  100% {
+    background-position: -3000px 0px;
+  }
+}
+@-moz-keyframes scroll {
+  100% {
+    background-position: -3000px 0px;
+  }
+}
+@-o-keyframes scroll {
+  100% {
+    background-position: -3000px 0px;
+  }
+}
+@-ms-keyframes scroll {
+  100% {
+    background-position: -3000px 0px;
+  }
+}
+@keyframes scroll {
+  100% {
+    background-position: 3000px 0px;
+  }
+}
