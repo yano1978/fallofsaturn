@@ -1,12 +1,23 @@
 const Contact = () => {
+  const gradient = {
+    background: 'linear-gradient(to right, #231311, #121e23)',
+  };
   return (
-    <div className="absolute flex content bg-black/80 p-10 top-0 left-0 w-screen h-screen items-center justify-center flex-col">
-      <h2 className="font-bold my-5 font-hypo text-[46px]">CONTACT</h2>
-      <a href="mailto:fallofsaturn@gmail.com">fallofsaturn@gmail.com</a>
-      <a className="pt-2" href="tel:++447784953012">
-        +44 7784 953012
-      </a>
-    </div>
+    <>
+      <div
+        style={gradient}
+        className="absolute left-0 top-0 flex h-screen w-screen flex-col items-center justify-center p-10"
+      >
+        <h2 className="z-50 my-5 font-hypo text-[46px] font-bold">CONTACT</h2>
+        <a className="z-50" href="mailto:fallofsaturn@gmail.com">
+          fallofsaturn@gmail.com
+        </a>
+        <a className="z-50 pt-2" href="tel:++447784953012">
+          +44 7784 953012
+        </a>
+      </div>
+      <div className="absolute left-0 top-0 z-40 flex h-screen w-screen bg-black/80"></div>
+    </>
   );
 };
 
