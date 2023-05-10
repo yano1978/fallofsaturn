@@ -1,3 +1,4 @@
+import ReactPlayer from 'react-player';
 const Music = () => {
   return (
     <>
@@ -6,23 +7,29 @@ const Music = () => {
         <div className="z-40 grid grid-flow-row gap-6 lg:grid-flow-col [&_iframe]:min-w-[300px] xs:[&_iframe]:min-w-[350px] sm:[&_iframe]:min-w-[600px] md:[&_iframe]:min-h-[325px] md:[&_iframe]:min-w-[500px] xl:[&_iframe]:min-w-[600px]">
           <div className="col-span-2">
             <h3 className="mb-2 text-center md:text-left">MathemEthic Live @TheDev - 29/05/23</h3>
-            <iframe
-              className="aspect-video w-full"
-              src="https://www.youtube.com/embed/96NsVTq78i8"
-              title="YouTube video player"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-            ></iframe>
+            <div className="react-player">
+              <ReactPlayer
+                url="https://www.youtube.com/embed/96NsVTq78i8"
+                light={true}
+                playing
+                controls
+                width="100%"
+                height="100%"
+              />
+            </div>
           </div>
           <div className="col-span-2">
             <h3 className="mb-2 text-center md:text-left">Nemesis Live @TheDev - 29/05/23</h3>
-            <iframe
-              className="aspect-video w-full"
-              src="https://www.youtube.com/embed/ZLtcRE9XGaw"
-              title="YouTube video player"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-            ></iframe>
+            <div className="react-player">
+              <ReactPlayer
+                url="https://www.youtube.com/embed/ZLtcRE9XGaw"
+                light={true}
+                playing
+                controls
+                width="100%"
+                height="100%"
+              />
+            </div>
           </div>
         </div>
       </div>
