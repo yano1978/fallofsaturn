@@ -8,7 +8,7 @@ const Pics = () => {
         style={gradient}
         className="content absolute left-0 top-0  flex h-screen w-screen flex-col items-center justify-center p-10"
       >
-        <div className="gallery z-50 mt-10 grid h-[700px] max-w-[800px] grid-cols-1 gap-4 overflow-y-auto xs:grid-cols-2 md:max-h-full md:grid-cols-4 md:overflow-y-hidden">
+        <div className="gallery z-40 mt-10 grid h-[700px] max-w-[800px] grid-cols-1 gap-4 overflow-y-auto xs:grid-cols-2 md:max-h-full md:grid-cols-4 md:overflow-y-hidden">
           <div className="grid gap-4">
             <div>
               <img
@@ -98,7 +98,7 @@ const Pics = () => {
             </div>
           </div>
         </div>
-        <div className="absolute left-0 top-0 z-40 flex h-screen w-screen bg-black/80"></div>
+        <div className="absolute left-0 top-0 z-30 flex h-screen w-screen bg-black/80"></div>
       </div>
     </>
   );

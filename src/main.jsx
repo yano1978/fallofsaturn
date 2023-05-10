@@ -1,7 +1,6 @@
 import '@/index.css';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { gsap } from 'gsap';
 import Layout from '@/components/Layout';
 import Home from '@/pages/Home';
 import Bio from '@/pages/Bio';
@@ -10,7 +9,7 @@ import Music from '@/pages/Music';
 import Merch from '@/pages/Merch';
 import Contact from '@/pages/Contact';
 import Footer from './components/Footer';
-import Animation from './plugins/Animation';
+import ThreeJSAnimation from './plugins/ThreeJSAnimation';
 import LogoIcon from './components/LogoIcon';
 
 export default function App() {
@@ -27,7 +26,7 @@ export default function App() {
         </Route>
       </Routes>
       <Footer />
-      <Animation />
+      <ThreeJSAnimation />
       <LogoIcon />
     </BrowserRouter>
   );

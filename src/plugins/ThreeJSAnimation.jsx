@@ -3,7 +3,7 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
 import { useEffect, useRef } from 'react';
 
-function MyThree() {
+const ThreeJSAnimation = () => {
   const refContainer = useRef(null);
   useEffect(() => {
     // Canvas
@@ -143,6 +143,6 @@ function MyThree() {
     tick();
   }, []);
   return <div ref={refContainer}></div>;
-}
+};
 
-export default MyThree;
+export default ThreeJSAnimation;

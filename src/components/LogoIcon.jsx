@@ -5,10 +5,10 @@ import { gsap } from 'gsap';
 const LogoIcon = () => {
   useEffect(() => {
     const logoEle = document.getElementById('logo');
-    gsap.from(logoEle, { duration: 1, delay: 2.5, autoAlpha: 0, opacity: 0 });
+    gsap.from(logoEle, { duration: 1, delay: 2.5, autoAlpha: 0 });
   }, []);
   return (
-    <div className="absolute top-[30%] z-30 w-full max-w-[270px]">
+    <div className="absolute top-[30%] z-20 w-full max-w-[270px]">
       <Logo />
     </div>
   );

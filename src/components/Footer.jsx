@@ -1,7 +1,7 @@
 const Footer = () => {
   return (
-    <footer className="absolute bottom-10 z-40">
-      <div className="grid grid-cols-3 gap-7 justify-center">
+    <footer className="absolute bottom-10 z-40 hidden">
+      <div className="grid grid-cols-3 justify-center gap-7">
         <a href="https://www.facebook.com/fallofsaturn" target="_blank">
           <svg role="img" className="w-6" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <title>Facebook</title>
