@@ -8,15 +8,10 @@ const Layout = () => {
   const toggleOpen = () => {
     setOpen(!open);
   };
-  // Canvas z-index position
-  const location = useLocation();
-  const canvas = document.getElementById('canvas');
-  location.pathname == '/' ? canvas.classList.add('z-10') : canvas.classList.add('z-20');
 
   useEffect(() => {
     // Show Menu & Footer
     const body = document.body;
-    const logoEle = document.getElementById('logo');
     const footerEle = document.getElementsByTagName('footer');
     const menuEle = document.querySelector('.menu');
     if (document.querySelector('.menu')) {
@@ -40,7 +35,7 @@ const Layout = () => {
           paused: true,
         }
       );
-      body.addEventListener('mouseover', () => {
+      body.addEventListener('click', () => {
         animationHeader.play();
         animationFooter.play();
       });
