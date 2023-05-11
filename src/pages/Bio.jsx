@@ -8,9 +8,9 @@ const Bio = () => {
           groove metal. Playing in an extreme low tuning to create a nice balance between the new
           and old elements of metal. Our first song was released on Bandcamp late last year. Check
           it if you haven’t already. The next single <strong>Knowledge is Power</strong> will be
-          released on the <strong>19th of May</strong>
+          released on the <strong>26th of May </strong>
           with an accompanying video. further releases shortly will follow, showcasing the bands
-          diversity and experience not to be pigeonholed into one genre or style. Keep{' '}
+          diversity and experience not to be pigeonholed into one genre or style. Keep
           <strong>Fall of Saturn</strong> in your sights as we are here to stay.
         </div>
       </div>

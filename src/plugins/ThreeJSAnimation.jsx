@@ -69,9 +69,11 @@ const ThreeJSAnimation = () => {
     });
 
     // Light
-    const light = new THREE.PointLight('white', 2);
-    light.position.set(12, 12, 12);
-    scene.add(light);
+    const ambientLightRed = new THREE.AmbientLight('#231311');
+    const ambientLightBlue = new THREE.AmbientLight('#121e23');
+    const light = new THREE.PointLight('white', 1.5);
+    light.position.set(48, 24, 24);
+    scene.add(ambientLightRed, ambientLightBlue, light);
 
     const sphere = new THREE.Mesh(geometrySphere, materialSphere);
     scene.add(sphere);

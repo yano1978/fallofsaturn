@@ -15,6 +15,8 @@ import LogoIcon from './components/LogoIcon';
 export default function App() {
   return (
     <BrowserRouter>
+      <LogoIcon />
+      <ThreeJSAnimation />
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
@@ -26,8 +28,6 @@ export default function App() {
         </Route>
       </Routes>
       <Footer />
-      <ThreeJSAnimation />
-      <LogoIcon />
     </BrowserRouter>
   );
 }
