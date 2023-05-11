@@ -20,6 +20,13 @@ button:focus {
   box-shadow: none;
 }
 
+#canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
 .nebula {
   z-index: 1;
   position: fixed;
@@ -31,7 +38,7 @@ button:focus {
   animation: 200s scroll infinite linear;
 }
 .menu a.active {
-  color: theme(colors.steelblue);
+  color: theme('colors.steelblue');
 }
 
 #hamburger {
@@ -79,13 +86,25 @@ button:focus {
 }
 
 .react-player {
-  /* position: absolute; */
+  position: relative;
   top: 0;
   left: 0;
-  div {
-    min-width: 600px;
-    min-height: 300px;
-    border: none !important;
+  .react-player__shadow {
+    width: 100%;
+    height: 100%;
+    min-height: 200px;
+    min-width: 300px;
+    background: rgb(0, 0, 0, 0.7) !important;
+    border-radius: unset !important;
+    border: 2px solid theme('colors.red');
+    @media (min-width: 375px) {
+      min-height: 250px;
+      min-width: 375px;
+    }
+    @media (min-width: 768px) {
+      min-height: 325px;
+      min-width: 500px;
+    }
   }
 }
 
