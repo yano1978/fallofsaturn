@@ -5,7 +5,6 @@ import svgr from 'vite-plugin-svgr';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: 'https://fallofsaturn.vercel.app',
   plugins: [svgr(), react()],
   resolve: {
     alias: {

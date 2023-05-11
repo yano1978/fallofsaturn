@@ -9,7 +9,7 @@ const LogoIcon = () => {
   }, []);
 
   return (
-    <div className="absolute top-[27.5%] z-30 w-full max-w-[270px] md:top-[30%]">
+    <div className="absolute top-[32.5%] z-30 w-full max-w-[225px] sm:top-[30%] sm:max-w-[270px]">
       <Logo />
     </div>
   );
