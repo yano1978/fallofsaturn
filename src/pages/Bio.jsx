@@ -9,12 +9,12 @@ const Bio = () => {
             groove metal. Conceived on an overcast Sunday afternoon in the Summer of 2019 by
             <strong> Val (drums)</strong> and <strong>Will (Bass)</strong> with the idea to start a
             new groove metal music venture. So the Rhythm section is sorted, next step find the
-            right musicians to fill the missing pieces. In the Autumn <strong>guitar</strong> master
-            <strong> Linas</strong> joined the project. After a short while the band decided to
-            relocated our base from Earlsfield to West Ham in early 2020. Due unforeseen
+            right musicians to fill the missing pieces. In the Autumn{' '}
+            <strong>guitarist Linas</strong> joined the project. After a short while the band
+            decided to relocated our base from Earlsfield to West Ham in early 2020. Due unforeseen
             circumstances the final piece of the jigsaw didn’t fall into place until earlier 2022.
             Have to say it was worth the wait, <strong>Ernesto</strong> a man with a wide
-            <strong> vocal</strong>
+            <strong> vocal </strong>
             ability who brings a nice range and depth to the music we have created. As a band we
             play in an extreme low tuning and we needed to find a balance between the new and old
             elements of metal.
@@ -28,7 +28,7 @@ const Bio = () => {
             gigs in the pipeline, we will keep you posted. Come check our live experience out on the
             road. The next single
             <strong> Knowledge is Power</strong> will be released on the
-            <strong>26th of May </strong>
+            <strong> 26th of May </strong>
             with an accompanying video on <strong>YouTube</strong>. Further releases shortly will
             follow showcasing the bands diversity and experience not to be pigeonholed into one
             genre or style. Keep <strong>Fall of Saturn</strong> in your sights as we are here to
