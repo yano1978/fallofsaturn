@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Outlet, NavLink, useLocation } from 'react-router-dom';
+import { Outlet, NavLink } from 'react-router-dom';
 import { gsap } from 'gsap';
 
 const Layout = () => {
@@ -30,7 +30,7 @@ const Layout = () => {
         { opacity: 0, y: 0 },
         {
           opacity: 1,
-          display: 'block',
+          display: 'flex',
           y: 20,
           paused: true,
         }
@@ -73,7 +73,7 @@ const Layout = () => {
               id="navbar"
             >
               <ul className="-ml-2 mt-4 flex w-[125px] flex-col p-0 font-hypo text-[20px] font-medium md:ml-0 md:mt-0 md:w-full md:flex-row md:space-x-8 md:p-4 md:text-[26px]">
-                <li>
+                <li onClick={toggleOpen}>
                   <NavLink
                     className="menu-item block py-2 pl-3 pr-4 text-white hover:bg-transparent hover:text-firebrick dark:hover:bg-transparent md:border-0 md:p-0"
                     to="/"
@@ -81,7 +81,7 @@ const Layout = () => {
                     Home
                   </NavLink>
                 </li>
-                <li>
+                <li onClick={toggleOpen}>
                   <NavLink
                     className="menu-item block py-2 pl-3 pr-4 text-white hover:bg-transparent hover:text-firebrick dark:hover:bg-transparent md:border-0 md:p-0"
                     to="/bio"
@@ -89,7 +89,7 @@ const Layout = () => {
                     Bio
                   </NavLink>
                 </li>
-                <li>
+                <li onClick={toggleOpen}>
                   <NavLink
                     className="menu-item block py-2 pl-3 pr-4 text-white hover:bg-transparent hover:text-firebrick dark:hover:bg-transparent md:border-0 md:p-0"
                     to="music"
@@ -97,7 +97,7 @@ const Layout = () => {
                     Music
                   </NavLink>
                 </li>
-                <li>
+                <li onClick={toggleOpen}>
                   <NavLink
                     className="menu-item block py-2 pl-3 pr-4 text-white hover:bg-transparent hover:text-firebrick dark:hover:bg-transparent md:border-0 md:p-0"
                     to="pics"
@@ -105,7 +105,7 @@ const Layout = () => {
                     Pics
                   </NavLink>
                 </li>
-                <li>
+                <li onClick={toggleOpen}>
                   <NavLink
                     className="menu-item block py-2 pl-3 pr-4 text-white hover:bg-transparent hover:text-firebrick dark:hover:bg-transparent md:border-0 md:p-0"
                     to="/merch"
@@ -113,7 +113,7 @@ const Layout = () => {
                     Merch
                   </NavLink>
                 </li>
-                <li>
+                <li onClick={toggleOpen}>
                   <NavLink
                     className="menu-item block py-2 pl-3 pr-4 text-white hover:bg-transparent hover:text-firebrick dark:hover:bg-transparent md:border-0 md:p-0"
                     to="/contact"
