@@ -1,6 +1,13 @@
+import { useLocation } from 'react-router-dom';
+
 const Footer = () => {
+  const location = useLocation();
   return (
-    <footer className="absolute bottom-7 z-40 hidden h-14 w-full items-center justify-center">
+    <footer
+      className={`absolute bottom-7 z-40 hidden h-14 w-full items-center justify-center ${
+        location.pathname == '/' ? 'flex' : '!hidden'
+      }`}
+    >
       <div className="grid grid-cols-4 justify-center gap-5">
         <a href="https://www.facebook.com/fallofsaturn" target="_blank">
           <svg role="img" className="w-6" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">

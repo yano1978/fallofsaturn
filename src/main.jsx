@@ -8,9 +8,9 @@ import Pics from '@/pages/Pics';
 import Music from '@/pages/Music';
 import Merch from '@/pages/Merch';
 import Contact from '@/pages/Contact';
-import Footer from './components/Footer';
-import ThreeJSAnimation from './plugins/ThreeJSAnimation';
-import LogoIcon from './components/LogoIcon';
+import Footer from '@/components/Footer';
+import ThreeJSAnimation from '@/plugins/ThreeJSAnimation';
+import LogoIcon from '@/components/LogoIcon';
 
 export default function App() {
   return (
