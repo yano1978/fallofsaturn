@@ -18,13 +18,6 @@ body {
     height: 100%;
   }
 }
-.overflowHidden {
-  overflow: hidden;
-  margin: 0;
-  touch-action: none;
-  -ms-touch-action: none;
-  height: 100vh;
-}
 
 button:focus {
   outline: none;
