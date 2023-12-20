@@ -18,6 +18,7 @@ export default function App() {
     <HashRouter>
       <LogoIcon />
       <ThreeJSAnimation />
+      {/* TODO: Uncomment and add release date */}
       {/* <Modal /> */}
       <Routes>
         <Route path="/" element={<Layout />}>
