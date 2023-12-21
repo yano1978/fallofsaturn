@@ -23,11 +23,11 @@ const Music = () => {
             </div>
             <div className="col-span-2">
               <h3 className="mb-2 text-center font-bold md:text-left">
-                Nemesis Live @TheDev - 29/05/23
+                Knowledge is Power - Lyric Video
               </h3>
               <div className="react-player">
                 <ReactPlayer
-                  url="https://www.youtube.com/embed/ZLtcRE9XGaw"
+                  url="https://www.youtube.com/embed/txBbkExfvMc?si=CEGCBvZb2mqG-giu"
                   light={true}
                   playing
                   controls
