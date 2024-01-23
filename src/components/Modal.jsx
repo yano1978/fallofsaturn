@@ -46,7 +46,7 @@ const Modal = () => {
             height: '600px',
           }}
         >
-          <p className="font-hypo text-3xl font-bold md:text-[42px]">FIRST ALBUM OUT - XX/XX/24</p>
+          <p className="font-hypo text-3xl font-bold md:text-[42px]">FIRST EP OUT - 15/03/2024</p>
         </div>
       </div>
     </>

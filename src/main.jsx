@@ -11,15 +11,14 @@ import Contact from '@/pages/Contact';
 import Footer from '@/components/Footer';
 import ThreeJSAnimation from '@/plugins/ThreeJSAnimation';
 import LogoIcon from '@/components/LogoIcon';
-// import Modal from '@/components/Modal';
+import Modal from '@/components/Modal';
 
 export default function App() {
   return (
     <HashRouter>
       <LogoIcon />
       <ThreeJSAnimation />
-      {/* TODO: Uncomment and add release date */}
-      {/* <Modal /> */}
+      <Modal />
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
