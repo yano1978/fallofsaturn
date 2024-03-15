@@ -35,18 +35,15 @@ const Modal = () => {
             </svg>
           </button>
         </div>
-        <div
-          className="flex items-end justify-center text-center"
-          style={{
-            backgroundImage: `url(${cover})`,
-            backgroundSize: 'contain',
-            backgroundRepeat: 'no-repeat',
-            backgroundPosition: 'center',
-            width: '100%',
-            height: '600px',
-          }}
-        >
-          <p className="font-hypo text-3xl font-bold md:text-[42px]">FIRST EP OUT - 15/03/2024</p>
+        <div className="flex h-fit w-full max-w-[600px] flex-col items-center justify-center text-center">
+          <p className="pb-5 font-hypo text-3xl font-bold md:text-[60px]">FIRST EP OUT NOW!</p>
+          <iframe
+            src="https://open.spotify.com/embed/album/4b0781cosvNb5Xh8wkgPzZ"
+            width="100%"
+            height="600"
+            allowtransparency="true"
+            allow="encrypted-media"
+          ></iframe>
         </div>
       </div>
     </>
