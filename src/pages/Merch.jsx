@@ -6,9 +6,9 @@ const Merch = () => {
   let [showFront, toggleFront] = useState(false);
   return (
     <>
-      <div className="absolute left-0 top-0 flex h-screen w-screen flex-col items-center justify-center p-10">
+      <div className="absolute left-0 top-0 flex h-screen w-screen flex-col items-center justify-center overflow-hidden">
         <h2 className="z-40 my-5 font-hypo text-[46px] font-bold">MERCH</h2>
-        <div className="z-40 mx-40 grid gap-x-40 gap-y-10 md:mx-20 md:grid-cols-2 md:gap-y-0">
+        <div className="z-40 mx-40 grid gap-x-40 gap-y-5 md:mx-20 md:grid-cols-2 md:gap-y-0">
           <div className="flex flex-col items-center justify-center">
             <h2 className="mb-5 text-lg font-bold">Spiral of Decay Album</h2>
             <img
