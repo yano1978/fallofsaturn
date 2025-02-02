@@ -21,36 +21,36 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
-      - name: Set up Node
+
+      - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 18
           cache: 'npm'
+
       - name: Install dependencies
         run: npm install
-      - name: Build
-        run: |
-          npm run build
-          echo "✅ Build complete, checking output..."
-          ls -la ./dist
+
+      - name: Build project
+        run: npm run build
+
       - name: Debug Build Output
         run: |
-          echo "Checking if build output exists..."
           if [ ! -d "./dist" ]; then echo "❌ ERROR: dist/ folder does not exist!"; exit 1; fi
           if [ -z "$(ls -A ./dist)" ]; then echo "❌ ERROR: dist/ folder is empty!"; exit 1; fi
-          echo "✅ dist/ folder exists and contains files:"
-          ls -la ./dist
-          echo "Checking for index.html..."
           if [ ! -f "./dist/index.html" ]; then echo "❌ ERROR: index.html does not exist in dist/ folder!"; exit 1; fi
-          echo "✅ index.html exists."
-      - name: Setup Pages
+          echo "✅ Build output is valid."
+
+      - name: Setup GitHub Pages
         uses: actions/configure-pages@v4
-      - name: Upload Pages Artifact
+
+      - name: Upload build artifact
         uses: actions/upload-pages-artifact@v2
         with:
-          path: './dist'
+          path: ./dist
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
