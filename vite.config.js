@@ -7,9 +7,11 @@ import svgr from 'vite-plugin-svgr';
 export default defineConfig({
   plugins: [svgr(), react()],
   build: {
-    target: 'esnext',
     outDir: 'dist',
-    assetsInlineLimit: 0,
+    assetsDir: 'assets',
+    rollupOptions: {
+      input: 'index.html',
+    },
   },
   resolve: {
     alias: {
