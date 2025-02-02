@@ -11,16 +11,16 @@ const Music = () => {
               <iframe
                 src="https://open.spotify.com/embed/album/4b0781cosvNb5Xh8wkgPzZ"
                 width="100%"
-                height="600"
+                height="680"
                 allowtransparency="true"
                 allow="encrypted-media"
               ></iframe>
             </div>
             <div className="col-span-2">
-              <h3 className="mb-2 text-center font-bold ">MathemEthic Live @TheDev - 29/05/23</h3>
+              <h3 className="mb-2 text-center font-bold ">Knowledge is Power - Lyric Video</h3>
               <div className="react-player">
                 <ReactPlayer
-                  url="https://www.youtube.com/embed/96NsVTq78i8"
+                  url="https://www.youtube.com/embed/txBbkExfvMc?si=CEGCBvZb2mqG-giu"
                   light={true}
                   playing
                   controls
@@ -28,10 +28,10 @@ const Music = () => {
                   height="100%"
                 />
               </div>
-              <h3 className="mb-2 text-center font-bold ">Knowledge is Power - Lyric Video</h3>
+              <h3 className="mb-2 text-center font-bold ">MathemEthic Live @TheDev - 29/05/23</h3>
               <div className="react-player">
                 <ReactPlayer
-                  url="https://www.youtube.com/embed/txBbkExfvMc?si=CEGCBvZb2mqG-giu"
+                  url="https://www.youtube.com/embed/96NsVTq78i8"
                   light={true}
                   playing
                   controls
