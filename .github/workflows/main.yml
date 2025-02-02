@@ -30,13 +30,22 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+
       - name: Set up Node
         uses: actions/setup-node@v3
         with:
           node-version: 18
           cache: 'npm'
+
       - name: Install dependencies
         run: npm install
+
+      - name: Delete Node Modules and Cache
+        run: |
+          rm -rf node_modules
+          npm cache clean --force
+          rm -rf ~/.npm
+
       - name: Build
         run: |
           npm run build
@@ -56,7 +65,7 @@ jobs:
         uses: actions/configure-pages@v4
 
       - name: Upload Build Artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-pages-artifact@v2
         with:
           name: github-pages
           path: ./dist
