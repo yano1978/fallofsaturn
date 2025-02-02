@@ -41,17 +41,14 @@ jobs:
         run: npm run build
       - name: Setup Pages
         uses: actions/configure-pages@v4
+      - name: Ensure dist exists
+        run: |
+          if [ ! -d "./dist" ]; then echo "❌ Build directory not found!"; exit 1; fi
       - name: Upload Build Artifacts (Ensure v4)
         uses: actions/upload-artifact@v4
         with:
           name: build-output
           path: ./dist
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-      - name: Upload Pages Artifact
-        uses: actions/upload-pages-artifact@v2
-        with:
-          path: './dist'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
