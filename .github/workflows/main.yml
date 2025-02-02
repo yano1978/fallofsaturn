@@ -42,17 +42,19 @@ jobs:
           npm run build
           echo "✅ Build complete, checking output..."
           ls -la ./dist
-      - name: Debug dist path
+      - name: Debug Build Output
         run: |
+          echo "Checking if build output exists..."
           if [ ! -d "./dist" ]; then echo "❌ ERROR: dist/ folder does not exist!"; exit 1; fi
-          echo "✅ dist/ folder exists, listing contents:"
+          if [ -z "$(ls -A ./dist)" ]; then echo "❌ ERROR: dist/ folder is empty!"; exit 1; fi
+          echo "✅ dist/ folder exists and contains files:"
           ls -la ./dist
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload Build Artifacts (Ensure v4)
         uses: actions/upload-artifact@v4
         with:
-          name: build-output
+          name: github-pages
           path: ./dist
       - name: Deploy to GitHub Pages
         id: deployment
