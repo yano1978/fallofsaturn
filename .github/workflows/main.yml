@@ -59,8 +59,11 @@ jobs:
         with:
           name: github-pages
           path: ./dist
+          if-no-files-found: error
+      - name: Debug uploaded artifacts
+        run: ls -la /home/runner/work/_temp/
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
         with:
-          artifact-id: ${{ steps.upload-artifact.outputs.artifact-id }}
+          artifact_name: github-pages
