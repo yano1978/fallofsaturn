@@ -1,4 +1,4 @@
-import { useState, forwardRef } from 'react';
+import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
 const Menu = () => {
@@ -7,6 +7,7 @@ const Menu = () => {
   const toggleOpen = () => {
     setOpen(!open);
   };
+
   return (
     <nav className="menu absolute left-0 top-0 z-50  w-full">
       <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between px-4 py-2">

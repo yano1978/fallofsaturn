@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import cover from '../../static/images/cover.jpg';
 
 const Modal = () => {
   const [showModal, setShowModal] = useState(false);

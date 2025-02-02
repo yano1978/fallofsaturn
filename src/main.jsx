@@ -18,7 +18,7 @@ export default function App() {
     <HashRouter>
       <LogoIcon />
       <ThreeJSAnimation />
-      <Modal />
+      {/* <Modal /> */}
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
