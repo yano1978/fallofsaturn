@@ -45,10 +45,13 @@
     <meta property="og:image" content=www.fallofsaturn.com/static/images/menu-logo.png />
     <title>Fall Of Saturn</title>
   </head>
-  <body class="h-full w-full">
+  <body class="relative h-full w-full">
+    <div
+      class="flex w-full flex-col items-center justify-center overflow-hidden text-white"
+      id="app"
+    ></div>
     <canvas id="canvas" class="webgl absolute"></canvas>
     <div class="nebula" style="background: url('./static/textures/nebula.webp')"></div>
-    <div class="flex w-full items-center justify-center overflow-hidden text-white" id="app"></div>
     <div id="fullpage"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

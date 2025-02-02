@@ -15,22 +15,26 @@ import Modal from '@/components/Modal';
 
 export default function App() {
   return (
-    <HashRouter>
-      <LogoIcon />
+    <>
+      <Home />
+      {/* <LogoIcon /> */}
       <ThreeJSAnimation />
-      {/* <Modal /> */}
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="bio" element={<Bio />} />
-          <Route path="pics" element={<Pics />} />
-          <Route path="music" element={<Music />} />
-          <Route path="merch" element={<Merch />} />
-          <Route path="contact" element={<Contact />} />
-        </Route>
-      </Routes>
-      <Footer />
-    </HashRouter>
+      <Layout />
+    </>
+    // <HashRouter>
+    //   <Modal />
+    //   <Routes>
+    //     <Route path="/" element={<Layout />}>
+    //       <Route index element={<Home />} />
+    //       <Route path="bio" element={<Bio />} />
+    //       <Route path="pics" element={<Pics />} />
+    //       <Route path="music" element={<Music />} />
+    //       <Route path="merch" element={<Merch />} />
+    //       <Route path="contact" element={<Contact />} />
+    //     </Route>
+    //   </Routes>
+    //   <Footer />
+    // </HashRouter>
   );
 }
 

@@ -6,7 +6,7 @@ const Merch = () => {
   let [showFront, toggleFront] = useState(false);
   return (
     <>
-      <div className="absolute left-0 top-0 flex h-screen w-screen flex-col items-center justify-center overflow-hidden">
+      <div className="flex flex-col items-center justify-center px-20 py-10">
         <h2 className="z-40 my-5 font-hypo text-[46px] font-bold">MERCH</h2>
         <div className="z-40 mx-40 grid gap-x-40 gap-y-5 md:mx-20 md:grid-cols-2 md:gap-y-0">
           <div className="flex flex-col items-center justify-center">
@@ -48,7 +48,6 @@ const Merch = () => {
           </div>
         </div>
       </div>
-      <div className="absolute left-0 top-0 z-30 flex h-screen w-screen bg-black/80"></div>
     </>
   );
 };

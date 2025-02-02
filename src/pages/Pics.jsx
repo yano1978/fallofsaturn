@@ -13,8 +13,8 @@ const Pics = () => {
 
   return (
     <>
-      <div className="content absolute left-0 top-0  flex h-screen w-screen flex-col items-center justify-center p-10">
-        <div className="gallery z-40 mt-10 grid h-[700px] max-w-[800px] grid-cols-1 gap-4 overflow-y-auto xs:grid-cols-2 md:max-h-full md:grid-cols-4 md:overflow-y-hidden">
+      <div className="content flex flex-col items-center justify-center px-20 py-10">
+        <div className="gallery z-40 mt-10 grid max-w-[900px] grid-cols-1 gap-4 xs:grid-cols-2 md:max-h-full md:grid-cols-4 md:overflow-y-hidden">
           <div className="grid gap-4">
             <div>
               <img
@@ -120,7 +120,6 @@ const Pics = () => {
             </div>
           </div>
         </div>
-        <div className="absolute left-0 top-0 z-30 flex h-screen w-screen bg-black/70"></div>
       </div>
     </>
   );

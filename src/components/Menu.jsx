@@ -9,7 +9,7 @@ const Menu = () => {
   };
 
   return (
-    <nav className="menu absolute left-0 top-0 z-50  w-full">
+    <nav className="menu fixed top-0 z-20  w-full bg-black text-white">
       <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between px-4 py-2">
         <a href="/" className="flex items-center">
           <img src="/static/images/menu-logo.png" className="mr-3 w-12" alt="FOS Logo" />
@@ -38,52 +38,58 @@ const Menu = () => {
         >
           <ul className="-ml-2 mt-4 flex w-[125px] flex-col p-0 font-hypo text-[20px] font-medium md:ml-0 md:mt-0 md:w-full md:flex-row md:space-x-8 md:p-4 md:text-[26px]">
             <li onClick={toggleOpen}>
-              <NavLink
+              {/* <NavLink
                 className="menu-item block py-2 pl-3 pr-4 text-white hover:bg-transparent hover:text-firebrick dark:hover:bg-transparent md:border-0 md:p-0"
                 to="/"
               >
                 Home
-              </NavLink>
+              </NavLink> */}
+              Home
             </li>
             <li onClick={toggleOpen}>
-              <NavLink
+              {/* <NavLink
                 className="menu-item block py-2 pl-3 pr-4 text-white hover:bg-transparent hover:text-firebrick dark:hover:bg-transparent md:border-0 md:p-0"
                 to="/bio"
               >
                 Bio
-              </NavLink>
+              </NavLink> */}
+              Bio
             </li>
             <li onClick={toggleOpen}>
-              <NavLink
+              {/* <NavLink
                 className="menu-item block py-2 pl-3 pr-4 text-white hover:bg-transparent hover:text-firebrick dark:hover:bg-transparent md:border-0 md:p-0"
                 to="music"
               >
                 Music
-              </NavLink>
+              </NavLink> */}
+              Music
             </li>
             <li onClick={toggleOpen}>
-              <NavLink
+              {/* <NavLink
                 className="menu-item block py-2 pl-3 pr-4 text-white hover:bg-transparent hover:text-firebrick dark:hover:bg-transparent md:border-0 md:p-0"
                 to="pics"
               >
                 Pics
-              </NavLink>
+              </NavLink> */}
+              Pics
             </li>
             <li onClick={toggleOpen}>
-              <NavLink
+              {/* <NavLink
                 className="menu-item block py-2 pl-3 pr-4 text-white hover:bg-transparent hover:text-firebrick dark:hover:bg-transparent md:border-0 md:p-0"
                 to="/merch"
               >
                 Merch
-              </NavLink>
+              </NavLink> */}
+              Merch
             </li>
             <li onClick={toggleOpen}>
-              <NavLink
+              {/* <NavLink
                 className="menu-item block py-2 pl-3 pr-4 text-white hover:bg-transparent hover:text-firebrick dark:hover:bg-transparent md:border-0 md:p-0"
                 to="/contact"
               >
                 Contact
-              </NavLink>
+              </NavLink> */}
+              Contact
             </li>
           </ul>
         </div>

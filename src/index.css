@@ -9,7 +9,7 @@
   font-style: normal;
 }
 
-html,
+/* html,
 body {
   text-rendering: optimizeLegibility !important;
   -webkit-font-smoothing: antialiased !important;
@@ -17,7 +17,7 @@ body {
   #app {
     height: 100%;
   }
-}
+} */
 
 button:focus {
   outline: none;
@@ -28,7 +28,7 @@ button:focus {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 2;
+  opacity: 0.5;
 }
 
 .nebula {

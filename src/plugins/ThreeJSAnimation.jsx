@@ -103,6 +103,7 @@ const ThreeJSAnimation = () => {
     // Controls
     const controls = new OrbitControls(camera, canvas);
     controls.enableDamping = true;
+    controls.enableZoom = false;
 
     /**
      * Renderer
@@ -124,12 +125,12 @@ const ThreeJSAnimation = () => {
       const elapsedTime = clock.getElapsedTime();
 
       // Zoom on load
-      let counter = elapsedTime * 25;
-      const revolutions = 50;
-      if (counter >= 0 && counter <= revolutions) {
-        camera.position.x = revolutions - counter;
-        sphere.rotation.y = counter / 5;
-      }
+      // let counter = elapsedTime * 25;
+      // const revolutions = 50;
+      // if (counter >= 0 && counter <= revolutions) {
+      //   camera.position.x = revolutions - counter;
+      //   sphere.rotation.y = counter / 5;
+      // }
 
       // Update controls
       controls.update();

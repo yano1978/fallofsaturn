@@ -1,12 +1,13 @@
 import { useLocation } from 'react-router-dom';
 
 const Footer = () => {
-  const location = useLocation();
+  // const location = useLocation();
   return (
     <footer
-      className={`absolute bottom-7 z-40 hidden h-14 w-full items-center justify-center ${
-        location.pathname == '/' ? 'flex' : '!hidden'
-      }`}
+      // className={`absolute bottom-7 z-40 hidden h-14 w-full items-center justify-center ${
+      //   location.pathname == '/' ? 'flex' : '!hidden'
+      // }`}
+      className="absolute bottom-0 z-10 flex h-20 w-full items-center justify-center bg-black"
     >
       <div className="grid grid-cols-4 justify-center gap-5">
         <a href="https://www.facebook.com/fallofsaturn" target="_blank">
