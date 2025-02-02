@@ -38,12 +38,17 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Build
-        run: npm run build
+        run: |
+          npm run build
+          echo "✅ Build complete, checking output..."
+          ls -la ./dist
+      - name: Debug dist path
+        run: |
+          if [ ! -d "./dist" ]; then echo "❌ ERROR: dist/ folder does not exist!"; exit 1; fi
+          echo "✅ dist/ folder exists, listing contents:"
+          ls -la ./dist
       - name: Setup Pages
         uses: actions/configure-pages@v4
-      - name: Ensure dist exists
-        run: |
-          if [ ! -d "./dist" ]; then echo "❌ Build directory not found!"; exit 1; fi
       - name: Upload Build Artifacts (Ensure v4)
         uses: actions/upload-artifact@v4
         with:
