@@ -8,10 +8,6 @@ export default defineConfig({
   plugins: [svgr(), react()],
   build: {
     outDir: 'dist',
-    assetsDir: 'assets',
-    rollupOptions: {
-      input: 'index.html',
-    },
   },
   resolve: {
     alias: {
