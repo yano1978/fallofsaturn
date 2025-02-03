@@ -19,6 +19,10 @@ body {
   }
 } */
 
+body {
+  overflow-x: hidden;
+}
+
 button:focus {
   outline: none;
   box-shadow: none;

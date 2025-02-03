@@ -1,9 +1,10 @@
 const Bio = () => {
   return (
     <>
-      <div className="mt-20 flex flex-col items-center justify-center px-20 py-10">
-        <h2 className="my-2 font-hypo text-[46px] font-bold">BIO</h2>
-        <div className="max-w-[900px] md:text-lg">
+      <div className="mt-20 flex flex-col items-center justify-center py-20">
+        <img className="w-full max-w-[325px] py-10 " src="static/images/logo-large.png" />
+        {/* <h2 className="my-2 font-hypo text-[46px] font-bold">BIO</h2> */}
+        <div className="max-w-[900px] px-32 leading-8 sm:px-10 md:text-lg">
           London based <strong>Fall of Saturn</strong> proudly flying the flag of a new wave of
           groove metal. Conceived on an overcast Sunday afternoon in the Summer of 2019 by
           <strong> Val (drums)</strong> and <strong>Will (Bass)</strong> with the idea to start a

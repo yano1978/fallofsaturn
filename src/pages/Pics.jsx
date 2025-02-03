@@ -13,7 +13,7 @@ const Pics = () => {
 
   return (
     <>
-      <div className="content flex flex-col items-center justify-center px-20 py-10">
+      <div className="content flex flex-col items-center justify-center p-20">
         <div className="gallery z-40 mt-10 grid max-w-[900px] grid-cols-1 gap-4 xs:grid-cols-2 md:max-h-full md:grid-cols-4 md:overflow-y-hidden">
           <div className="grid gap-4">
             <div>
