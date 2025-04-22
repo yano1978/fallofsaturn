@@ -5,7 +5,12 @@ export default {
     colors: {
       white: '#ffffff',
       black: '#000000',
-      red: '#231311',
+      red: {
+        DEFAULT: '#231311',
+        dark: '#090003',
+        mid: '#1c000c',
+        light: '#3e0017',
+      },
       blue: '#121e23',
       firebrick: '#b22222',
       steelblue: '#065368',
@@ -21,7 +26,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        hypo: ['HypotheticalmoonofMercury, sans-serif'],
+        orbitron: ['orbitrontheticalmoonofMercury, sans-serif'],
+        orbitron: ['Orbitron, Arial'],
       },
       animation: {
         fade: 'fade 0.25s ease-in-out',

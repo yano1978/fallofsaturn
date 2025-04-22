@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import PictoIcon from '@/components/PictoIcon';
 
 const Menu = () => {
   // Menu toggle
@@ -9,10 +10,10 @@ const Menu = () => {
   };
 
   return (
-    <nav className="menu fixed top-0 z-20  w-full bg-black text-white">
+    <nav className="menu fixed top-0 z-20 w-full  bg-black uppercase text-white">
       <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between px-4 py-2">
         <a href="/" className="flex items-center">
-          <img src="/static/images/menu-logo.png" className="mr-3 w-12" alt="FOS Logo" />
+          <PictoIcon />
         </a>
         <button
           onClick={toggleOpen}
@@ -31,30 +32,32 @@ const Menu = () => {
           </div>
         </button>
         <div
-          className={`inner-menu hidden w-full animate-fade md:block md:w-auto ${
-            open ? '!block' : 'hidden'
+          className={`relative w-full animate-fade md:block md:w-auto ${
+            open
+              ? 'block h-[100px] text-right [&_ul]:absolute [&_ul]:right-0 [&_ul]:pr-3'
+              : 'hidden'
           }`}
           id="navbar"
         >
-          <ul className="-ml-2 mt-4 flex w-[125px] flex-col p-0 font-hypo text-[20px] font-medium md:ml-0 md:mt-0 md:w-full md:flex-row md:space-x-8 md:p-4 md:text-[26px]">
-            <li onClick={toggleOpen}>
-              {/* <NavLink
+          <ul className="flex w-[125px] flex-col p-0 font-orbitron text-[20px] font-medium md:!relative md:ml-0 md:mt-0 md:w-full md:flex-row md:space-x-8 md:p-4 md:text-[26px]">
+            {/* <li onClick={toggleOpen}>
+              <NavLink
                 className="menu-item block py-2 pl-3 pr-4 text-white hover:bg-transparent hover:text-firebrick dark:hover:bg-transparent md:border-0 md:p-0"
                 to="/"
               >
                 Home
-              </NavLink> */}
+              </NavLink>
               Home
-            </li>
-            <li onClick={toggleOpen}>
-              {/* <NavLink
+            </li> */}
+            {/* <li onClick={toggleOpen}>
+              <NavLink
                 className="menu-item block py-2 pl-3 pr-4 text-white hover:bg-transparent hover:text-firebrick dark:hover:bg-transparent md:border-0 md:p-0"
                 to="/bio"
               >
                 Bio
-              </NavLink> */}
+              </NavLink>
               Bio
-            </li>
+            </li> */}
             <li onClick={toggleOpen}>
               {/* <NavLink
                 className="menu-item block py-2 pl-3 pr-4 text-white hover:bg-transparent hover:text-firebrick dark:hover:bg-transparent md:border-0 md:p-0"
@@ -62,17 +65,17 @@ const Menu = () => {
               >
                 Music
               </NavLink> */}
-              Music
+              <a href="#music">Music</a>
             </li>
-            <li onClick={toggleOpen}>
-              {/* <NavLink
+            {/* <li onClick={toggleOpen}>
+              <NavLink
                 className="menu-item block py-2 pl-3 pr-4 text-white hover:bg-transparent hover:text-firebrick dark:hover:bg-transparent md:border-0 md:p-0"
                 to="pics"
               >
                 Pics
-              </NavLink> */}
+              </NavLink>
               Pics
-            </li>
+            </li> */}
             <li onClick={toggleOpen}>
               {/* <NavLink
                 className="menu-item block py-2 pl-3 pr-4 text-white hover:bg-transparent hover:text-firebrick dark:hover:bg-transparent md:border-0 md:p-0"
@@ -80,7 +83,7 @@ const Menu = () => {
               >
                 Merch
               </NavLink> */}
-              Merch
+              <a href="#merch">Merch</a>
             </li>
             <li onClick={toggleOpen}>
               {/* <NavLink
@@ -89,7 +92,7 @@ const Menu = () => {
               >
                 Contact
               </NavLink> */}
-              Contact
+              <a href="#contact">Contact</a>
             </li>
           </ul>
         </div>

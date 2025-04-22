@@ -4,7 +4,7 @@ import { HashRouter, Routes, Route } from 'react-router-dom';
 import Layout from '@/components/Layout';
 import Home from '@/pages/Home';
 import Bio from '@/pages/Bio';
-import Pics from '@/pages/Pics';
+// import Pics from '@/pages/Pics';
 import Music from '@/pages/Music';
 import Merch from '@/pages/Merch';
 import Contact from '@/pages/Contact';

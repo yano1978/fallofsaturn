@@ -2,8 +2,8 @@ import ReactPlayer from 'react-player';
 const Music = () => {
   return (
     <>
-      <div className="flex flex-col items-center justify-center p-20">
-        <h2 className="text-center font-hypo text-[46px] font-bold">MUSIC</h2>
+      <div id="music" className="flex flex-col items-center justify-center p-20">
+        <h2 className="text-center font-orbitron text-[46px] font-bold">MUSIC</h2>
         <div className="grid grid-flow-row gap-5 lg:grid-flow-col [&_iframe]:min-h-[200px] [&_iframe]:min-w-[300px] xs:[&_iframe]:min-h-[250px] xs:[&_iframe]:min-w-[250px] sm:[&_iframe]:min-h-[250px] sm:[&_iframe]:min-w-[375px] md:[&_iframe]:min-h-[325px] md:[&_iframe]:min-w-[500px]">
           <div className="col-span-2">
             <h3 className="mb-2 text-center font-bold ">Listen to our album on Spotify</h3>

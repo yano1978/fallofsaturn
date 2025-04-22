@@ -2,7 +2,7 @@ import Menu from '@/components/Menu';
 import Footer from '@/components/Footer';
 import Bio from '@/pages/Bio';
 import Music from '@/pages/Music';
-import Pics from '@/pages/Pics';
+import ImageCarousel from '@/pages/ImageCarousel';
 import Merch from '@/pages/Merch';
 import Contact from '@/pages/Contact';
 
@@ -13,7 +13,7 @@ const Home = () => {
       <main className="z-10">
         <Bio />
         <Music />
-        <Pics />
+        {/* <ImageCarousel /> */}
         <Merch />
         <Contact />
       </main>

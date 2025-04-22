@@ -35,7 +35,7 @@ const Modal = () => {
           </button>
         </div>
         <div className="flex h-fit w-full max-w-[600px] flex-col items-center justify-center text-center">
-          <p className="pb-5 font-hypo text-3xl font-bold md:text-[60px]">FIRST EP OUT NOW!</p>
+          <p className="pb-5 font-orbitron text-3xl font-bold md:text-[60px]">FIRST EP OUT NOW!</p>
           <iframe
             src="https://open.spotify.com/embed/album/4b0781cosvNb5Xh8wkgPzZ"
             width="100%"

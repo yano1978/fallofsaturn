@@ -2,12 +2,14 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-@font-face {
-  font-family: 'HypotheticalmoonofMercury';
-  src: url('/fonts/HypotheticalmoonofMercury.ttf') format('truetype');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+
+/* @font-face {
+  font-family: 'orbitrontheticalmoonofMercury';
+  src: url('/fonts/orbitrontheticalmoonofMercury.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
-}
+} */
 
 /* html,
 body {
@@ -18,8 +20,15 @@ body {
     height: 100%;
   }
 } */
+html {
+  scroll-behavior: smooth;
+}
 
 body {
+  font-family: 'Orbitron', Arial, Helvetica, sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
   overflow-x: hidden;
 }
 
@@ -32,7 +41,8 @@ button:focus {
   position: fixed;
   top: 0;
   left: 0;
-  opacity: 0.5;
+  opacity: 0.9;
+  z-index: 2;
 }
 
 .nebula {
@@ -46,7 +56,7 @@ button:focus {
   animation: 200s scroll infinite linear;
 }
 .menu a.active {
-  color: theme('colors.steelblue');
+  color: theme('colors.red.light');
 }
 
 #hamburger {
@@ -104,7 +114,7 @@ button:focus {
     min-width: 300px;
     background: rgb(0, 0, 0, 0.7) !important;
     border-radius: unset !important;
-    border: 2px solid theme('colors.red');
+    border: 2px solid theme('colors.red.DEFAULT');
     @media (min-width: 375px) {
       min-height: 250px;
       min-width: 375px;
