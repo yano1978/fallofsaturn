@@ -2,30 +2,19 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
-
-/* @font-face {
-  font-family: 'orbitrontheticalmoonofMercury';
-  src: url('/fonts/orbitrontheticalmoonofMercury.ttf') format('truetype');
+@font-face {
+  font-family: 'Orbitron';
+  src: url('/fonts/Orbitron.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
-} */
+}
 
-/* html,
-body {
-  text-rendering: optimizeLegibility !important;
-  -webkit-font-smoothing: antialiased !important;
-  height: 100%;
-  #app {
-    height: 100%;
-  }
-} */
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  font-family: 'Orbitron', Arial, Helvetica, sans-serif;
+  font-family: 'Orbitron', Arial;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;

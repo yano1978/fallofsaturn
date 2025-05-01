@@ -40,58 +40,13 @@ const Menu = () => {
           id="navbar"
         >
           <ul className="flex w-[125px] flex-col p-0 font-orbitron text-[20px] font-medium md:!relative md:ml-0 md:mt-0 md:w-full md:flex-row md:space-x-8 md:p-4 md:text-[26px]">
-            {/* <li onClick={toggleOpen}>
-              <NavLink
-                className="menu-item block py-2 pl-3 pr-4 text-white hover:bg-transparent hover:text-firebrick dark:hover:bg-transparent md:border-0 md:p-0"
-                to="/"
-              >
-                Home
-              </NavLink>
-              Home
-            </li> */}
-            {/* <li onClick={toggleOpen}>
-              <NavLink
-                className="menu-item block py-2 pl-3 pr-4 text-white hover:bg-transparent hover:text-firebrick dark:hover:bg-transparent md:border-0 md:p-0"
-                to="/bio"
-              >
-                Bio
-              </NavLink>
-              Bio
-            </li> */}
-            <li onClick={toggleOpen}>
-              {/* <NavLink
-                className="menu-item block py-2 pl-3 pr-4 text-white hover:bg-transparent hover:text-firebrick dark:hover:bg-transparent md:border-0 md:p-0"
-                to="music"
-              >
-                Music
-              </NavLink> */}
+            <li>
               <a href="#music">Music</a>
             </li>
-            {/* <li onClick={toggleOpen}>
-              <NavLink
-                className="menu-item block py-2 pl-3 pr-4 text-white hover:bg-transparent hover:text-firebrick dark:hover:bg-transparent md:border-0 md:p-0"
-                to="pics"
-              >
-                Pics
-              </NavLink>
-              Pics
-            </li> */}
-            <li onClick={toggleOpen}>
-              {/* <NavLink
-                className="menu-item block py-2 pl-3 pr-4 text-white hover:bg-transparent hover:text-firebrick dark:hover:bg-transparent md:border-0 md:p-0"
-                to="/merch"
-              >
-                Merch
-              </NavLink> */}
+            <li>
               <a href="#merch">Merch</a>
             </li>
-            <li onClick={toggleOpen}>
-              {/* <NavLink
-                className="menu-item block py-2 pl-3 pr-4 text-white hover:bg-transparent hover:text-firebrick dark:hover:bg-transparent md:border-0 md:p-0"
-                to="/contact"
-              >
-                Contact
-              </NavLink> */}
+            <li>
               <a href="#contact">Contact</a>
             </li>
           </ul>

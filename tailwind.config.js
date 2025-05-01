@@ -26,7 +26,6 @@ export default {
     },
     extend: {
       fontFamily: {
-        orbitron: ['orbitrontheticalmoonofMercury, sans-serif'],
         orbitron: ['Orbitron, Arial'],
       },
       animation: {
