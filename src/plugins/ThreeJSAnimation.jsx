@@ -142,7 +142,7 @@ const ThreeJSAnimation = () => {
 
     particlesGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
 
-    // Lighting for dramatic Saturn scene with proper shadows
+    // Lighting
     const ambientLight = new THREE.AmbientLight(0x202020, 0.4); // Dimmer ambient for more contrast
 
     // Main directional sunlight with shadows enabled
@@ -156,29 +156,29 @@ const ThreeJSAnimation = () => {
     sunLight.shadow.camera.near = 0.5;
     sunLight.shadow.camera.far = 50;
 
-    // Rim light to highlight the edge
+    // Rim light
     const rimLight = new THREE.PointLight(0xffffee, 0.6);
     rimLight.position.set(-12, 0, -10);
 
-    // Subtle fill light
+    // Fill light
     const fillLight = new THREE.PointLight(0xffffdd, 0.3);
     fillLight.position.set(0, -5, -3);
 
     scene.add(ambientLight, sunLight, rimLight, fillLight);
 
-    // Sphere (Saturn)
+    // Sphere geometry
     const geometrySphere = new THREE.SphereGeometry(1, 64, 48);
 
-    // Create more realistic Saturn material with proper shading
+    // Planet material
     const materialSphere = new THREE.MeshStandardMaterial({
       map: planetTexture,
-      color: '#e6d9b8', // More accurate Saturn color (sandy beige)
+      color: '#e6d9b8',
       roughness: 0.8,
       metalness: 0.1,
       bumpScale: 0.05,
     });
 
-    // Add atmospheric glow
+    // Glow
     const atmosphereGeometry = new THREE.SphereGeometry(1.02, 64, 48);
     const atmosphereMaterial = new THREE.MeshPhongMaterial({
       color: 0xf3e9c0,
@@ -187,16 +187,16 @@ const ThreeJSAnimation = () => {
       side: THREE.BackSide,
     });
 
-    // Create Saturn
+    // Planet
     const sphere = new THREE.Mesh(geometrySphere, materialSphere);
 
     // Add subtle atmosphere glow around Saturn
     const atmosphere = new THREE.Mesh(atmosphereGeometry, atmosphereMaterial);
     sphere.add(atmosphere);
 
-    // Add visible atmospheric bands to Saturn
+    // Rings
     const createBands = () => {
-      const bandCount = 8; // More bands for realism
+      const bandCount = 50; // Bands on the rings
       for (let i = 0; i < bandCount; i++) {
         const yPos = 0.9 * (i / bandCount - 0.4); // Position bands primarily at equator
 
@@ -216,13 +216,13 @@ const ThreeJSAnimation = () => {
         const bandMaterial = new THREE.MeshStandardMaterial({
           color: bandColor,
           transparent: true,
-          opacity: 0.4 + (Math.abs(i - bandCount / 2) < 2 ? 0.15 : 0), // More visible in the middle
+          opacity: 0.4 + (Math.abs(i - bandCount / 2) < 2 ? 0.15 : 0),
           roughness: 0.7,
           metalness: 0.1,
         });
 
         const band = new THREE.Mesh(bandGeometry, bandMaterial);
-        band.rotation.x = Math.PI / 2; // Rotate to be around the equator
+        band.rotation.x = Math.PI / 2;
         band.position.y = yPos;
         sphere.add(band);
       }
@@ -231,7 +231,7 @@ const ThreeJSAnimation = () => {
     createBands();
     scene.add(sphere);
 
-    // Material for background particles
+    // Particles
     const particlesMaterial = new THREE.PointsMaterial({
       size: 0.01,
       sizeAttenuation: true,
@@ -250,7 +250,7 @@ const ThreeJSAnimation = () => {
     // Base camera
     const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100);
 
-    // Position camera to better see the rings
+    // Camera position
     camera.position.z = 3.2;
     camera.position.y = 1.5;
     camera.position.x = 0.5;
@@ -268,13 +268,14 @@ const ThreeJSAnimation = () => {
     controls.target.set(0, 0.2, 0);
 
     /**
-     * Renderer with improved settings
+     * Renderer
      */
     const renderer = new THREE.WebGLRenderer({
       canvas: canvas,
       antialias: true,
       alpha: true,
     });
+
     renderer.setSize(sizes.width, sizes.height);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     renderer.setClearColor(0x000000, 0); // Black background
