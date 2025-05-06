@@ -33,12 +33,15 @@ const Menu = () => {
         <div
           className={`relative w-full animate-fade md:block md:w-auto ${
             open
-              ? 'block h-[100px] text-right [&_ul]:absolute [&_ul]:right-0 [&_ul]:pr-3'
+              ? 'block h-[125px] text-right [&_ul]:absolute [&_ul]:right-0 [&_ul]:pr-3'
               : 'hidden'
           }`}
           id="navbar"
         >
           <ul className="flex w-[125px] flex-col p-0 font-orbitron text-[20px] font-medium md:!relative md:ml-0 md:mt-0 md:w-full md:flex-row md:space-x-8 md:p-4 md:text-[26px]">
+            <li>
+              <a href="#bio">Bio</a>
+            </li>
             <li>
               <a href="#music">Music</a>
             </li>
