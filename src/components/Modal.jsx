@@ -13,7 +13,7 @@ const Modal = () => {
       <div
         className={`${
           showModal ? 'z-[99999] opacity-100' : 'z-0 opacity-0'
-        } fixed flex h-full w-full items-center justify-center overflow-y-auto bg-black transition-opacity duration-300`}
+        } fixed left-0 top-0 flex h-full w-full items-center justify-center overflow-y-auto bg-black transition-opacity duration-300`}
       >
         <div className="absolute right-5 top-5">
           <button className="text-white" onClick={() => setShowModal(false)}>
@@ -35,14 +35,14 @@ const Modal = () => {
           </button>
         </div>
         <div className="flex h-fit w-full max-w-[600px] flex-col items-center justify-center text-center">
-          <p className="pb-5 font-orbitron text-3xl font-bold md:text-[60px]">FIRST EP OUT NOW!</p>
-          <iframe
-            src="https://open.spotify.com/embed/album/4b0781cosvNb5Xh8wkgPzZ"
-            width="100%"
-            height="600"
-            allowtransparency="true"
-            allow="encrypted-media"
-          ></iframe>
+          <p className="pb-5 font-orbitron text-base leading-[1.1] md:text-[40px]">
+            27/06/25 <br /> NEW SINGLE OUT
+          </p>
+          <img
+            className="max-h-[750px]"
+            src="static/images/single-cover.jpg"
+            alt="new single cover"
+          />
         </div>
       </div>
     </>

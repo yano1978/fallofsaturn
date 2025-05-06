@@ -1,10 +1,10 @@
 import Menu from '@/components/Menu';
 import Footer from '@/components/Footer';
-import Bio from '@/pages/Bio';
-import Music from '@/pages/Music';
-import ImageCarousel from '@/pages/ImageCarousel';
-import Merch from '@/pages/Merch';
-import Contact from '@/pages/Contact';
+import Bio from '@/sections/Bio';
+import Music from '@/sections/Music';
+import ImageCarousel from '@/sections/ImageCarousel';
+import Merch from '@/sections/Merch';
+import Contact from '@/sections/Contact';
 
 const Home = () => {
   return (

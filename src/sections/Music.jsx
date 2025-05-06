@@ -13,7 +13,7 @@ const Music = () => {
               height="680"
               allowtransparency="true"
               allow="encrypted-media"
-            ></iframe>
+            />
           </div>
           <div className="col-span-2">
             <h3 className="mb-2 text-center font-bold ">Knowledge is Power - Lyric Video</h3>

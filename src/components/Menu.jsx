@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { NavLink } from 'react-router-dom';
 import PictoIcon from '@/components/PictoIcon';
 
 const Menu = () => {
@@ -10,7 +9,7 @@ const Menu = () => {
   };
 
   return (
-    <nav className="menu fixed top-0 z-20 w-full  bg-black uppercase text-white">
+    <nav className="menu fixed top-0 z-20 w-full bg-black uppercase ">
       <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between px-4 py-2">
         <a href="/" className="flex items-center">
           <PictoIcon />

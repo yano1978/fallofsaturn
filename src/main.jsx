@@ -1,14 +1,15 @@
 import '@/index.css';
 import ReactDOM from 'react-dom/client';
 import Layout from '@/components/Layout';
-import Home from '@/pages/Home';
-// import Pics from '@/pages/Pics';
+import Modal from '@/components/Modal';
+import Home from '@/components/Home';
 
 export default function App() {
   return (
     <>
       <Home />
       <Layout />
+      <Modal />
     </>
   );
 }
