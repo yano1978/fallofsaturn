@@ -5,6 +5,7 @@ import Music from '@/sections/Music';
 import ImageCarousel from '@/sections/ImageCarousel';
 import Merch from '@/sections/Merch';
 import Contact from '@/sections/Contact';
+import Pics from '../sections/Pics';
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
       <main className="z-10">
         <Bio />
         <Music />
+        <Pics />
         {/* <ImageCarousel /> */}
         <Merch />
         <Contact />

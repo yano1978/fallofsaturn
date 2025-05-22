@@ -103,7 +103,6 @@ button:focus {
     min-width: 300px;
     background: rgb(0, 0, 0, 0.7) !important;
     border-radius: unset !important;
-    border: 2px solid theme('colors.red.DEFAULT');
     @media (min-width: 375px) {
       min-height: 250px;
       min-width: 375px;

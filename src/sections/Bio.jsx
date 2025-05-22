@@ -3,8 +3,8 @@ const Bio = () => {
     <>
       <div id="bio" className="mt-20 flex flex-col items-center justify-center py-20">
         <div className="mx-auto max-w-[900px] px-32 leading-8 sm:px-10 md:text-lg xl:max-w-[1200px]">
-          <img className="w-full py-10 " src="static/images/banner.jpg" />
-          <div className="leading-loose lg:mt-20 lg:px-20 [&_p]:pb-5 last:[&_p]:pb-0">
+          <img className="w-full py-10" src="static/images/banner.jpg" />
+          <div className="px-5 leading-loose lg:mt-20 lg:px-20 [&_p]:pb-5 last:[&_p]:pb-0">
             <p>
               Fall of Saturn was conceived on an overcast Sunday afternoon in the summer of 2019 by
               Val (drums) and Will (bass), who shared a vision of creating a new groove metal

@@ -22,7 +22,7 @@ const Menu = () => {
               open ? 'open' : ''
             }`}
             aria-controls="navbar-default"
-            aria-expanded="false"
+            aria-expanded={open}
           >
             <span className="sr-only">Open main menu</span>
             <div id="hamburger">
@@ -43,29 +43,40 @@ const Menu = () => {
                 <a href="#merch">Merch</a>
               </li>
               <li>
+                <a href="#pics">Pics</a>
+              </li>
+              <li>
                 <a href="#contact">Contact</a>
               </li>
             </ul>
           </div>
         </div>
-        {open && (
-          <div className="absolute left-0 right-0 top-full z-40 animate-fade bg-black pb-4 md:hidden">
-            <ul className="flex flex-col items-end pr-7 font-orbitron text-[20px] font-medium">
-              <li className="mb-2 py-1">
-                <a href="#bio">Bio</a>
-              </li>
-              <li className="mb-2 py-1">
-                <a href="#music">Music</a>
-              </li>
-              <li className="mb-2 py-1">
-                <a href="#merch">Merch</a>
-              </li>
-              <li className="mb-2 py-1">
-                <a href="#contact">Contact</a>
-              </li>
-            </ul>
-          </div>
-        )}
+
+        <div
+          className={`absolute left-0 right-0 top-full z-40 bg-black pb-4 transition-all duration-300 ease-in-out md:hidden ${
+            open
+              ? 'pointer-events-auto translate-y-0 opacity-100'
+              : 'pointer-events-none -translate-y-2 opacity-0'
+          }`}
+        >
+          <ul className="flex flex-col items-end pr-7 font-orbitron text-[20px] font-medium">
+            <li className="mb-2 py-1">
+              <a href="#bio">Bio</a>
+            </li>
+            <li className="mb-2 py-1">
+              <a href="#music">Music</a>
+            </li>
+            <li className="mb-2 py-1">
+              <a href="#merch">Merch</a>
+            </li>
+            <li className="mb-2 py-1">
+              <a href="#pics">Pics</a>
+            </li>
+            <li className="mb-2 py-1">
+              <a href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
       </nav>
     </>
   );
