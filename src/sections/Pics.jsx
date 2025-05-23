@@ -12,7 +12,7 @@ const Pics = () => {
           <img src="static/images/linas.jpg" alt="linas" />
         </div>
         <div className="flex flex-col items-center justify-center">
-          <h3 className="py-5">Will - Base</h3>
+          <h3 className="py-5">Will - Bass</h3>
           <img src="static/images/will.jpg" alt="will" />
         </div>
         <div className="flex flex-col items-center justify-center">
