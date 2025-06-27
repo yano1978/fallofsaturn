@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-
+import { useEffect, useState } from 'react';
+import ReactPlayer from 'react-player';
 const Modal = () => {
   const [showModal, setShowModal] = useState(false);
   useEffect(() => {
@@ -34,14 +34,20 @@ const Modal = () => {
             </svg>
           </button>
         </div>
-        <div className="flex h-fit w-full max-w-[600px] flex-col items-center justify-center text-center">
-          <p className="pb-5 font-orbitron text-base leading-[1.1] md:text-[40px]">
-            27/06/25 <br /> NEW SINGLE OUT
+        <div className="flex h-full w-full flex-col items-center justify-center p-10 text-center">
+          <p className="pb-5 font-orbitron text-base leading-[1.1] md:pb-10 md:text-[40px]">
+            NEW SINGLE OUT
           </p>
-          <img
-            className="max-h-[750px]"
-            src="static/images/single-cover.jpg"
-            alt="new single cover"
+          <iframe
+            className="max-w-[350px] sm:max-w-full md:min-h-[450px] md:min-w-[900px] lg:min-h-[600px] lg:min-w-[1200px]"
+            width="560"
+            height="315"
+            src="https://www.youtube-nocookie.com/embed/qiVnjiKfDO0?si=-ePOCc2JfbNjOiLW"
+            title="Pray or Prey"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
           />
         </div>
       </div>
