@@ -39,7 +39,7 @@ const Modal = () => {
             NEW SINGLE OUT
           </p>
           <iframe
-            className="max-w-[350px] sm:max-w-full md:min-h-[450px] md:min-w-[900px] lg:min-h-[500px] lg:min-w-[1000px] xl:min-h-[500px] xl:min-w-[1000px]"
+            className="max-w-[350px] sm:max-w-full md:min-h-[450px] md:min-w-[900px] lg:min-h-[500px] lg:min-w-[1000px] xl:min-h-[600px] xl:min-w-[1200px]"
             width="560"
             height="315"
             src="https://www.youtube-nocookie.com/embed/qiVnjiKfDO0?si=-ePOCc2JfbNjOiLW"
