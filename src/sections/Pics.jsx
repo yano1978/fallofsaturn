@@ -7,7 +7,6 @@ const Pics = () => {
           <h3 className="py-5">Vocals - Ernesto</h3>
           <img src="static/images/ernesto.jpg" alt="ernesto" />
         </div>
-
         <div className="flex flex-col items-center justify-center">
           <h3 className="py-5">Bass - Will</h3>
           <img src="static/images/will.jpg" alt="will" />
@@ -17,8 +16,16 @@ const Pics = () => {
           <img src="static/images/val.jpg" alt="val" />
         </div>
         <div className="flex flex-col items-center justify-center">
-          <h3 className="py-5">Guitars - To be announced</h3>
-          <div className="h-[450px] w-[450px] bg-black sm:w-[350px] md:w-[450px]">&nbsp;</div>
+          <h3 className="py-5">Guitars - Nikki</h3>
+          <div className="h-[250px] w-[250px] bg-black sm:h-[350px] sm:w-[350px] md:h-[450px] md:w-[450px]">
+            &nbsp;
+          </div>
+        </div>
+        <div className="flex flex-col items-center justify-center">
+          <h3 className="py-5">Guitars - Brian</h3>
+          <div className="h-[250px] w-[250px] bg-black sm:h-[350px] sm:w-[350px] md:h-[450px] md:w-[450px]">
+            &nbsp;
+          </div>
         </div>
       </div>
     </div>

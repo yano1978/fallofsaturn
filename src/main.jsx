@@ -1,7 +1,7 @@
 import '@/index.css';
 import ReactDOM from 'react-dom/client';
 import Layout from '@/components/Layout';
-import Modal from '@/components/Modal';
+// import Modal from '@/components/Modal';
 import Home from '@/components/Home';
 
 export default function App() {
@@ -9,7 +9,7 @@ export default function App() {
     <>
       <Home />
       <Layout />
-      <Modal />
+      {/* <Modal /> */}
     </>
   );
 }
