@@ -6,7 +6,7 @@ const Bio = () => {
         className="mx-44 mt-20 flex flex-col items-center justify-center py-10 sm:mx-auto lg:max-w-[1100px]"
       >
         <div className="mx-auto leading-8 sm:px-10 md:text-lg">
-          <img className="w-full py-10" src="static/images/banner.jpg" alt="FOS" />
+          <img className="w-full py-10" src="static/images/fb-banner.jpeg" alt="FOS" />
           <div className="leading-loose lg:mt-20 [&_p]:pb-5 last:[&_p]:pb-0">
             <p>
               Fall of Saturn was conceived on an overcast Sunday afternoon in the summer of 2019 by

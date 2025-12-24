@@ -44,10 +44,9 @@ const Modal = () => {
             height="315"
             src="https://www.youtube-nocookie.com/embed/qiVnjiKfDO0?si=-ePOCc2JfbNjOiLW"
             title="Pray or Prey"
-            frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
           />
         </div>
       </div>
