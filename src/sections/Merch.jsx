@@ -8,7 +8,7 @@ const Merch = () => {
     <>
       <div id="merch" className="flex flex-col items-center justify-center py-10">
         <h2 className="my-5 font-orbitron text-[46px] font-bold">MERCH</h2>
-        <div className="mx-40 grid gap-x-40 gap-y-5 md:mx-20 md:grid-cols-2 md:gap-y-0">
+        <div className="mx-4 grid gap-x-10 gap-y-5 md:mx-20 md:grid-cols-2 md:gap-x-10 md:gap-y-0">
           <div className="flex flex-col items-center justify-center">
             <h2 className="mb-5 whitespace-nowrap text-lg font-bold">Spiral of Decay Album</h2>
             <img
