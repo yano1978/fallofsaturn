@@ -40,7 +40,6 @@ const Music = () => {
                     height="352"
                     allowtransparency="true"
                     allow="encrypted-media"
-                    style={{ borderRadius: 0 }}
                   />
                 </div>
               </div>
