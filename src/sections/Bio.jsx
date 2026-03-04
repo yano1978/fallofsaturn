@@ -39,6 +39,14 @@ const Bio = () => {
               previous releases with our new experimental and modern style. So turn up the volume
               and come join us for the ride...
             </p>
+            <p>
+              After our performance at Co-Fest 2025, Linas decided to leave the band. By the end of
+              the year, we welcomed two new guitarists, Niki and Brian, whose unique styles have
+              further enriched our sound and brought new dimensions to our music. With their
+              addition, we’re eager to explore fresh creative directions and keep evolving as a
+              band. Stay tuned for more updates and upcoming releases as we begin this exciting new
+              chapter together.
+            </p>
           </div>
         </div>
       </div>
