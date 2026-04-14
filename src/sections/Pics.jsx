@@ -17,15 +17,11 @@ const Pics = () => {
         </div>
         <div className="flex flex-col items-center justify-center">
           <h3 className="py-5">Guitars - Niki</h3>
-          <div className="h-[250px] w-[250px] bg-black sm:h-[350px] sm:w-[350px] md:h-[450px] md:w-[450px]">
-            &nbsp;
-          </div>
+          <img src="static/images/niki.jpg" alt="niki" />
         </div>
         <div className="flex flex-col items-center justify-center">
           <h3 className="py-5">Guitars - Brian</h3>
-          <div className="h-[250px] w-[250px] bg-black sm:h-[350px] sm:w-[350px] md:h-[450px] md:w-[450px]">
-            &nbsp;
-          </div>
+          <img src="static/images/brian.jpg" alt="brian" />
         </div>
       </div>
     </div>

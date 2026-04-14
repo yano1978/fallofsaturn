@@ -16,7 +16,7 @@ const Home = () => {
         <Music />
         <Pics />
         {/* <ImageCarousel /> */}
-        <Merch />
+        {/* <Merch /> */}
         <Contact />
       </main>
       <Footer />
