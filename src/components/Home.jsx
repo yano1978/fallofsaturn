@@ -3,9 +3,8 @@ import Footer from '@/components/Footer';
 import Bio from '@/sections/Bio';
 import Music from '@/sections/Music';
 import ImageCarousel from '@/sections/ImageCarousel';
-import Merch from '@/sections/Merch';
 import Contact from '@/sections/Contact';
-import Pics from '../sections/Pics';
+import Pics from '@/sections/Pics';
 
 const Home = () => {
   return (
@@ -15,8 +14,7 @@ const Home = () => {
         <Bio />
         <Music />
         <Pics />
-        {/* <ImageCarousel /> */}
-        {/* <Merch /> */}
+        <ImageCarousel />
         <Contact />
       </main>
       <Footer />
