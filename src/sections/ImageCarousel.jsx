@@ -1,19 +1,8 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { createPortal } from 'react-dom';
 
-const images = [
-  'DSC02135','DSC02152','DSC02153','DSC02155','DSC02158','DSC02160','DSC02161',
-  'DSC02163','DSC02164','DSC02171','DSC02173','DSC02180','DSC02187','DSC02193',
-  'DSC02202','DSC02206','DSC02210','DSC02218','DSC02220','DSC02221','DSC02222',
-  'DSC02227','DSC02232','DSC02234','DSC02246','DSC02248','DSC02253','DSC02259',
-  'DSC02262','DSC02264','DSC02271','DSC02277','DSC02280','DSC02281','DSC02285',
-  'DSC02287','DSC02301','DSC02303','DSC02309','DSC02314','DSC02359','DSC02364',
-  'DSC02369','DSC02382','DSC02384','DSC02388','DSC02389','DSC02394','DSC02401',
-  'DSC02403','DSC02420','DSC02425','DSC02428','DSC02429','DSC02436','DSC02440',
-  'DSC02455','DSC02456','DSC02461','DSC02462','DSC02464','DSC02466','DSC02467',
-  'DSC02468','DSC02470','DSC02471','DSC02474','DSC02475','DSC02481','DSC02482',
-  'DSC02483','DSC02484','DSC02488','DSC02490',
-].map((name) => `/static/images/carousel/optimised/${name}.webp`);
+const modules = import.meta.glob('../assets/carousel/*.webp', { eager: true, as: 'url' });
+const images = Object.values(modules).sort();
 
 const ChevronLeft = () => (
   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="h-5 w-5">

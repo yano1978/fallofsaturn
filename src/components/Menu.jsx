@@ -39,9 +39,9 @@ const Menu = () => {
               <li>
                 <a href="#music">Music</a>
               </li>
-              <li>
+              {/* <li>
                 <a href="#merch">Merch</a>
-              </li>
+              </li> */}
               <li>
                 <a href="#pics">Pics</a>
               </li>
@@ -66,9 +66,9 @@ const Menu = () => {
             <li className="mb-2 py-1">
               <a href="#music">Music</a>
             </li>
-            <li className="mb-2 py-1">
+            {/* <li className="mb-2 py-1">
               <a href="#merch">Merch</a>
-            </li>
+            </li> */}
             <li className="mb-2 py-1">
               <a href="#pics">Pics</a>
             </li>
