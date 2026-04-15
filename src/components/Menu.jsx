@@ -39,11 +39,11 @@ const Menu = () => {
               <li>
                 <a href="#music">Music</a>
               </li>
-              {/* <li>
-                <a href="#merch">Merch</a>
-              </li> */}
               <li>
                 <a href="#pics">Pics</a>
+              </li>
+              <li>
+                <a href="#gallery">Gallery</a>
               </li>
               <li>
                 <a href="#contact">Contact</a>
@@ -66,14 +66,14 @@ const Menu = () => {
             <li className="mb-2 py-1">
               <a href="#music">Music</a>
             </li>
-            {/* <li className="mb-2 py-1">
-              <a href="#merch">Merch</a>
-            </li> */}
             <li className="mb-2 py-1">
               <a href="#pics">Pics</a>
             </li>
             <li className="mb-2 py-1">
               <a href="#contact">Contact</a>
+            </li>
+            <li className="mb-2 py-1">
+              <a href="#gallery">Gallery</a>
             </li>
           </ul>
         </div>
