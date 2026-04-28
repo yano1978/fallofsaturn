@@ -19,7 +19,7 @@ const Bio = () => {
             “Teotzin” and “R.I.P. (Rise in Popularity).”
           </p>
           <p>
-            n mid‑2024 the band joined the London Metal Coalition, and 2025 brought a major leap
+            In mid‑2024 the band joined the London Metal Coalition, and 2025 brought a major leap
             forward with the single “Pray or Prey” and their first official music video, closing out
             the year onstage at Co‑Fest 2025. After that show, Linas parted ways with the band to
             pursue new horizons, and the group is grateful for his role in shaping the sound of Fall
