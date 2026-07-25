@@ -11,16 +11,13 @@ yarn dev
 # Production build
 yarn build
 
-# Deploy to GitHub Pages
-yarn deploy
-
 # Preview production build locally
 yarn preview
 ```
 
 ## Architecture
 
-**Stack:** React 18 + Vite 4 + Tailwind CSS 3 + GSAP + Three.js. Deployed to GitHub Pages via `gh-pages`.
+**Stack:** React 18 + Vite 4 + Tailwind CSS 3 + GSAP + Three.js. Deployed to GitHub Pages via GitHub Actions.
 
 **Entry point:** `index.html` → `src/main.jsx` renders `<App />` which composes `<Home />` (all sections) and `<Layout />` (background gradient).
 
@@ -34,7 +31,7 @@ yarn preview
 
 **Path alias:** `@` maps to `src/` (configured in `vite.config.js`).
 
-**Deployment:** `yarn deploy` runs `vite build` then pushes `dist/` to the `gh-pages` branch. The `CNAME` file sets the custom domain `fallofsaturn.com`.
+**Deployment:** `.github/workflows/main.yml` builds and deploys automatically via GitHub Actions on every push to `main` (GitHub Pages source is set to "GitHub Actions"). `public/CNAME` sets the custom domain `fallofsaturn.com` and is copied into `dist/` on build.
 
 ## Known issues / TODOs
 
