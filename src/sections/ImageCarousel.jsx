@@ -1,8 +1,20 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { createPortal } from 'react-dom';
 
-const modules = import.meta.glob('../assets/carousel/*.webp', { eager: true, as: 'url' });
-const images = Object.values(modules).sort();
+const modules = import.meta.glob('../assets/carousel/**/*.webp', { eager: true, as: 'url' });
+
+const GIG_LABELS = {
+  'nambucca-2026-04-04': 'Nambucca — 4 April 2026',
+  'big-red-2026-05-24': 'Big Red — 24 May 2026',
+};
+
+const photos = Object.entries(modules)
+  .map(([path, src]) => ({ src, gig: path.split('/').slice(-2, -1)[0] }))
+  .sort((a, b) => a.src.localeCompare(b.src));
+
+const gigs = [...new Set(photos.map((p) => p.gig))]
+  .sort()
+  .map((id) => ({ id, label: GIG_LABELS[id] ?? id }));
 
 const ChevronLeft = () => (
   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="h-5 w-5">
@@ -23,13 +35,20 @@ const CloseIcon = () => (
 );
 
 const ImageCarousel = () => {
+  const [activeGig, setActiveGig] = useState('all');
   const [current, setCurrent] = useState(0);
   const [lightbox, setLightbox] = useState(false);
   const [paused, setPaused] = useState(false);
   const touchStart = useRef(null);
 
-  const prev = useCallback(() => setCurrent((i) => (i === 0 ? images.length - 1 : i - 1)), []);
-  const next = useCallback(() => setCurrent((i) => (i === images.length - 1 ? 0 : i + 1)), []);
+  const images = activeGig === 'all'
+    ? photos.map((p) => p.src)
+    : photos.filter((p) => p.gig === activeGig).map((p) => p.src);
+
+  useEffect(() => setCurrent(0), [activeGig]);
+
+  const prev = useCallback(() => setCurrent((i) => (i === 0 ? images.length - 1 : i - 1)), [images.length]);
+  const next = useCallback(() => setCurrent((i) => (i === images.length - 1 ? 0 : i + 1)), [images.length]);
 
   // Auto-advance
   useEffect(() => {
@@ -73,6 +92,28 @@ const ImageCarousel = () => {
         onMouseLeave={() => setPaused(false)}
       >
         <h2 className="my-5 font-orbitron text-[46px] font-bold">GALLERY</h2>
+
+        <div className="mb-4 flex flex-wrap justify-center gap-2 px-4">
+          <button
+            onClick={() => setActiveGig('all')}
+            className={`rounded-full px-4 py-1.5 text-sm backdrop-blur-sm transition ${
+              activeGig === 'all' ? 'bg-firebrick text-white' : 'bg-black/50 text-white hover:bg-black/75'
+            }`}
+          >
+            All
+          </button>
+          {gigs.map((g) => (
+            <button
+              key={g.id}
+              onClick={() => setActiveGig(g.id)}
+              className={`rounded-full px-4 py-1.5 text-sm backdrop-blur-sm transition ${
+                activeGig === g.id ? 'bg-firebrick text-white' : 'bg-black/50 text-white hover:bg-black/75'
+              }`}
+            >
+              {g.label}
+            </button>
+          ))}
+        </div>
 
         <div className="relative w-full max-w-4xl px-4">
           {/* Track */}
