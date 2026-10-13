@@ -6,30 +6,54 @@ const modules = import.meta.glob('../assets/carousel/**/*.webp', { eager: true, 
 const GIG_LABELS = {
   'nambucca-2026-04-04': 'Nambucca — 4 April 2026',
   'big-red-2026-05-24': 'Big Red — 24 May 2026',
+  'signature-brew-2026-06-05': 'Signature Brew — 5 June 2026',
 };
 
+const gigDate = (id) => id.match(/\d{4}-\d{2}-\d{2}$/)?.[0] ?? '';
+
 const photos = Object.entries(modules)
-  .map(([path, src]) => ({ src, gig: path.split('/').slice(-2, -1)[0] }))
-  .sort((a, b) => a.src.localeCompare(b.src));
+  .map(([path, src]) => ({ src, path, gig: path.split('/').slice(-2, -1)[0] }))
+  .sort((a, b) => gigDate(a.gig).localeCompare(gigDate(b.gig)) || a.path.localeCompare(b.path));
 
 const gigs = [...new Set(photos.map((p) => p.gig))]
-  .sort()
+  .sort((a, b) => gigDate(a).localeCompare(gigDate(b)))
   .map((id) => ({ id, label: GIG_LABELS[id] ?? id }));
 
 const ChevronLeft = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="h-5 w-5">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    strokeWidth={2}
+    stroke="currentColor"
+    className="h-5 w-5"
+  >
     <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
   </svg>
 );
 
 const ChevronRight = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="h-5 w-5">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    strokeWidth={2}
+    stroke="currentColor"
+    className="h-5 w-5"
+  >
     <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
   </svg>
 );
 
 const CloseIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="h-5 w-5">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    strokeWidth={2}
+    stroke="currentColor"
+    className="h-5 w-5"
+  >
     <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
   </svg>
 );
@@ -41,14 +65,21 @@ const ImageCarousel = () => {
   const [paused, setPaused] = useState(false);
   const touchStart = useRef(null);
 
-  const images = activeGig === 'all'
-    ? photos.map((p) => p.src)
-    : photos.filter((p) => p.gig === activeGig).map((p) => p.src);
+  const images =
+    activeGig === 'all'
+      ? photos.map((p) => p.src)
+      : photos.filter((p) => p.gig === activeGig).map((p) => p.src);
 
   useEffect(() => setCurrent(0), [activeGig]);
 
-  const prev = useCallback(() => setCurrent((i) => (i === 0 ? images.length - 1 : i - 1)), [images.length]);
-  const next = useCallback(() => setCurrent((i) => (i === images.length - 1 ? 0 : i + 1)), [images.length]);
+  const prev = useCallback(
+    () => setCurrent((i) => (i === 0 ? images.length - 1 : i - 1)),
+    [images.length]
+  );
+  const next = useCallback(
+    () => setCurrent((i) => (i === images.length - 1 ? 0 : i + 1)),
+    [images.length]
+  );
 
   // Auto-advance
   useEffect(() => {
@@ -71,10 +102,14 @@ const ImageCarousel = () => {
   // Lock scroll when lightbox open
   useEffect(() => {
     document.body.style.overflow = lightbox ? 'hidden' : '';
-    return () => { document.body.style.overflow = ''; };
+    return () => {
+      document.body.style.overflow = '';
+    };
   }, [lightbox]);
 
-  const onTouchStart = (e) => { touchStart.current = e.touches[0].clientX; };
+  const onTouchStart = (e) => {
+    touchStart.current = e.touches[0].clientX;
+  };
   const onTouchEnd = (e) => {
     if (touchStart.current === null) return;
     const delta = touchStart.current - e.changedTouches[0].clientX;
@@ -97,7 +132,9 @@ const ImageCarousel = () => {
           <button
             onClick={() => setActiveGig('all')}
             className={`rounded-full px-4 py-1.5 text-sm backdrop-blur-sm transition ${
-              activeGig === 'all' ? 'bg-firebrick text-white' : 'bg-black/50 text-white hover:bg-black/75'
+              activeGig === 'all'
+                ? 'bg-firebrick text-white'
+                : 'bg-black/50 text-white hover:bg-black/75'
             }`}
           >
             All
@@ -107,7 +144,9 @@ const ImageCarousel = () => {
               key={g.id}
               onClick={() => setActiveGig(g.id)}
               className={`rounded-full px-4 py-1.5 text-sm backdrop-blur-sm transition ${
-                activeGig === g.id ? 'bg-firebrick text-white' : 'bg-black/50 text-white hover:bg-black/75'
+                activeGig === g.id
+                  ? 'bg-firebrick text-white'
+                  : 'bg-black/50 text-white hover:bg-black/75'
               }`}
             >
               {g.label}
@@ -143,7 +182,7 @@ const ImageCarousel = () => {
           {/* Prev button */}
           <button
             onClick={prev}
-            className="absolute left-6 top-1/2 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full bg-black/50 text-white backdrop-blur-sm transition hover:bg-black/75"
+            className="absolute left-6 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-black/50 text-white backdrop-blur-sm transition hover:bg-black/75"
             aria-label="Previous"
           >
             <ChevronLeft />
@@ -152,7 +191,7 @@ const ImageCarousel = () => {
           {/* Next button */}
           <button
             onClick={next}
-            className="absolute right-6 top-1/2 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full bg-black/50 text-white backdrop-blur-sm transition hover:bg-black/75"
+            className="absolute right-6 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-black/50 text-white backdrop-blur-sm transition hover:bg-black/75"
             aria-label="Next"
           >
             <ChevronRight />
@@ -164,8 +203,19 @@ const ImageCarousel = () => {
             className="absolute right-8 top-4 flex h-8 w-8 items-center justify-center rounded-full bg-black/50 text-white backdrop-blur-sm transition hover:bg-black/75"
             aria-label="Fullscreen"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="h-4 w-4">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="h-4 w-4"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15"
+              />
             </svg>
           </button>
 
@@ -185,54 +235,55 @@ const ImageCarousel = () => {
       </div>
 
       {/* Lightbox — rendered via portal at body level to escape main's stacking context */}
-      {lightbox && createPortal(
-        <div
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 backdrop-blur-sm"
-          onClick={(e) => e.target === e.currentTarget && setLightbox(false)}
-          onTouchStart={onTouchStart}
-          onTouchEnd={onTouchEnd}
-        >
-          <img
-            src={images[current]}
-            alt={`Fall of Saturn live ${current + 1}`}
-            className="max-h-[90vh] max-w-[90vw] object-contain"
-          />
-
-          {/* Close */}
-          <button
-            onClick={() => setLightbox(false)}
-            className="absolute right-4 top-8 flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-medium text-black transition hover:bg-white/80"
-            aria-label="Close"
+      {lightbox &&
+        createPortal(
+          <div
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 backdrop-blur-sm"
+            onClick={(e) => e.target === e.currentTarget && setLightbox(false)}
+            onTouchStart={onTouchStart}
+            onTouchEnd={onTouchEnd}
           >
-            <CloseIcon />
-            <span>Close</span>
-          </button>
+            <img
+              src={images[current]}
+              alt={`Fall of Saturn live ${current + 1}`}
+              className="max-h-[90vh] max-w-[90vw] object-contain"
+            />
 
-          {/* Prev */}
-          <button
-            onClick={prev}
-            className="absolute left-4 top-1/2 -translate-y-1/2 flex h-12 w-12 items-center justify-center rounded-full bg-white/10 text-white backdrop-blur-sm transition hover:bg-white/20"
-            aria-label="Previous"
-          >
-            <ChevronLeft />
-          </button>
+            {/* Close */}
+            <button
+              onClick={() => setLightbox(false)}
+              className="absolute right-4 top-8 flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-medium text-black transition hover:bg-white/80"
+              aria-label="Close"
+            >
+              <CloseIcon />
+              <span>Close</span>
+            </button>
 
-          {/* Next */}
-          <button
-            onClick={next}
-            className="absolute right-4 top-1/2 -translate-y-1/2 flex h-12 w-12 items-center justify-center rounded-full bg-white/10 text-white backdrop-blur-sm transition hover:bg-white/20"
-            aria-label="Next"
-          >
-            <ChevronRight />
-          </button>
+            {/* Prev */}
+            <button
+              onClick={prev}
+              className="absolute left-4 top-1/2 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-white backdrop-blur-sm transition hover:bg-white/20"
+              aria-label="Previous"
+            >
+              <ChevronLeft />
+            </button>
 
-          {/* Counter */}
-          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 rounded-full bg-white/10 px-4 py-1.5 text-sm text-white backdrop-blur-sm">
-            {current + 1} / {images.length}
-          </div>
-        </div>,
-        document.body
-      )}
+            {/* Next */}
+            <button
+              onClick={next}
+              className="absolute right-4 top-1/2 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-white backdrop-blur-sm transition hover:bg-white/20"
+              aria-label="Next"
+            >
+              <ChevronRight />
+            </button>
+
+            {/* Counter */}
+            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 rounded-full bg-white/10 px-4 py-1.5 text-sm text-white backdrop-blur-sm">
+              {current + 1} / {images.length}
+            </div>
+          </div>,
+          document.body
+        )}
     </>
   );
 };
