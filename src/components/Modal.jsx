@@ -1,8 +1,9 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 const RELEASE = new Date('2026-10-23T00:00:00+01:00');
 const PRESAVE_URL = 'https://distrokid.com/hyperfollow/fallofsaturn/vigil';
 const SEEN_KEY = 'vigilModalSeen';
+const AUDIO_SRC = 'static/audio/intro.m4a';
 
 const timeLeft = () => {
   const ms = Math.max(0, RELEASE - Date.now());
@@ -19,6 +20,8 @@ const Modal = () => {
   const [showModal, setShowModal] = useState(false);
   const [left, setLeft] = useState(timeLeft);
   const released = left.ms === 0;
+  const audioRef = useRef(null);
+  const [playing, setPlaying] = useState(false);
 
   // Show once per browser session, 5s after load
   useEffect(() => {
@@ -52,6 +55,24 @@ const Modal = () => {
     return () => window.removeEventListener('keydown', onKey);
   }, []);
 
+  // Try to autoplay when the popup opens; stop + rewind when it closes
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    if (showModal) {
+      audio.play().catch(() => {}); // blocked by browser → icon shows "play"
+    } else {
+      audio.pause();
+      audio.currentTime = 0;
+    }
+  }, [showModal]);
+
+  const toggleAudio = () => {
+    const audio = audioRef.current;
+    if (audio.paused) audio.play().catch(() => {});
+    else audio.pause();
+  };
+
   return (
     <>
       <div
@@ -59,7 +80,44 @@ const Modal = () => {
           showModal ? 'z-[99999] opacity-100' : 'pointer-events-none z-0 opacity-0'
         } fixed left-0 top-0 flex h-full w-full items-center justify-center overflow-y-auto bg-black transition-opacity duration-300`}
       >
-        <div className="absolute right-5 top-5">
+        <audio
+          ref={audioRef}
+          src={AUDIO_SRC}
+          loop
+          preload="none"
+          onPlay={() => setPlaying(true)}
+          onPause={() => setPlaying(false)}
+        />
+        <div className="absolute right-5 top-5 flex gap-3">
+          <button
+            className="text-white"
+            onClick={toggleAudio}
+            aria-label={playing ? 'Pause intro' : 'Play intro'}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth="1.5"
+              stroke="currentColor"
+              data-slot="icon"
+              className="h-9 w-9"
+            >
+              {playing ? (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M19.114 5.636a9 9 0 0 1 0 12.728M16.463 8.288a5.25 5.25 0 0 1 0 7.424M6.75 8.25l4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z"
+                />
+              ) : (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M17.25 9.75 19.5 12m0 0 2.25 2.25M19.5 12l2.25-2.25M19.5 12l-2.25 2.25m-10.5-6 4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z"
+                />
+              )}
+            </svg>
+          </button>
           <button className="text-white" onClick={() => setShowModal(false)} aria-label="Close">
             <svg
               xmlns="http://www.w3.org/2000/svg"
