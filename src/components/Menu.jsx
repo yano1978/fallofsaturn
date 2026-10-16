@@ -1,7 +1,11 @@
 import { useState } from 'react';
 import PictoIcon from '@/components/PictoIcon';
+import useUpcomingEvents from '@/hooks/useUpcomingEvents';
 
 const Menu = () => {
+  // Only link to Gigs when the section is shown
+  const hasGigs = useUpcomingEvents()?.length > 0;
+
   // Menu toggle
   const [open, setOpen] = useState(false);
   const toggleOpen = () => {
@@ -18,7 +22,7 @@ const Menu = () => {
           <button
             onClick={toggleOpen}
             type="button"
-            className={`text-gray-500 ml-3 inline-flex items-center rounded-lg p-2 text-sm md:hidden ${
+            className={`text-gray-500 ml-3 inline-flex items-center rounded-lg p-2 text-sm lg:hidden ${
               open ? 'open' : ''
             }`}
             aria-controls="navbar-default"
@@ -31,11 +35,16 @@ const Menu = () => {
               <div className="bar3"></div>
             </div>
           </button>
-          <div className="hidden w-auto md:block">
+          <div className="hidden w-auto lg:block">
             <ul className="flex flex-row space-x-8 font-orbitron text-[26px] font-medium">
               <li>
                 <a href="#bio">Bio</a>
               </li>
+              {hasGigs && (
+                <li>
+                  <a href="#gigs">Gigs</a>
+                </li>
+              )}
               <li>
                 <a href="#music">Music</a>
               </li>
@@ -53,7 +62,7 @@ const Menu = () => {
         </div>
 
         <div
-          className={`absolute left-0 right-0 top-full z-40 bg-black pb-4 transition-all duration-300 ease-in-out md:hidden ${
+          className={`absolute left-0 right-0 top-full z-40 bg-black pb-4 transition-all duration-300 ease-in-out lg:hidden ${
             open
               ? 'pointer-events-auto translate-y-0 opacity-100'
               : 'pointer-events-none -translate-y-2 opacity-0'
@@ -63,6 +72,11 @@ const Menu = () => {
             <li className="mb-2 py-1">
               <a href="#bio">Bio</a>
             </li>
+            {hasGigs && (
+              <li className="mb-2 py-1">
+                <a href="#gigs">Gigs</a>
+              </li>
+            )}
             <li className="mb-2 py-1">
               <a href="#music">Music</a>
             </li>
@@ -70,10 +84,10 @@ const Menu = () => {
               <a href="#pics">Pics</a>
             </li>
             <li className="mb-2 py-1">
-              <a href="#contact">Contact</a>
+              <a href="#gallery">Gallery</a>
             </li>
             <li className="mb-2 py-1">
-              <a href="#gallery">Gallery</a>
+              <a href="#contact">Contact</a>
             </li>
           </ul>
         </div>

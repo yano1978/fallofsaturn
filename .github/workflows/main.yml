@@ -9,6 +9,10 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+  # Daily rebuild to pick up new Bandsintown events (06:00 UTC)
+  schedule:
+    - cron: '0 6 * * *'
+
 # Sets the GITHUB_TOKEN permissions to allow deployment to GitHub Pages
 permissions:
   contents: read
@@ -37,6 +41,12 @@ jobs:
           cache: 'npm'
       - name: Install dependencies
         run: npm install
+
+      - name: Fetch Bandsintown events
+        run: node scripts/fetch-events.mjs
+        env:
+          BANDSINTOWN_APP_ID: ${{ secrets.BANDSINTOWN_APP_ID }}
+          BANDSINTOWN_ARTIST_ID: ${{ secrets.BANDSINTOWN_ARTIST_ID }}
 
       - name: Build
         run: |
