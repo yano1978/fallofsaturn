@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 
 const RELEASE = new Date('2026-10-23T00:00:00+01:00');
-const PRESAVE_URL = 'https://distrokid.com/hyperfollow/fallofsaturn/vigil';
+const LISTEN_URL = 'https://open.spotify.com/album/7hzylFhhC5gfJvZMrDFvi3';
 const SEEN_KEY = 'vigilModalSeen';
 const AUDIO_SRC = 'static/audio/intro.m4a';
 
@@ -173,7 +173,7 @@ const Modal = () => {
             </div>
           )}
           <a
-            href={PRESAVE_URL}
+            href={LISTEN_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="mt-6 rounded-full bg-firebrick px-8 py-3 text-white transition hover:opacity-80"
