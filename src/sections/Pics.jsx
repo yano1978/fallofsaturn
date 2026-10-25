@@ -19,10 +19,6 @@ const Pics = () => {
           <h3 className="py-5">Guitars - Niki</h3>
           <img src="static/images/niki.jpg" alt="niki" />
         </div>
-        <div className="flex flex-col items-center justify-center lg:col-span-2 lg:justify-self-center">
-          <h3 className="py-5">Guitars - Brian</h3>
-          <img src="static/images/brian.jpg" alt="brian" />
-        </div>
       </div>
     </div>
   );

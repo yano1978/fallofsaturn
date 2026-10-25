@@ -23,14 +23,14 @@ const Bio = () => {
             forward with the single “Pray or Prey” and their first official music video, closing out
             the year onstage at Co‑Fest 2025. After that show, Linas parted ways with the band to
             pursue new horizons, and the group is grateful for his role in shaping the sound of Fall
-            of Saturn. Following a period of reflection, two new guitarists, Niki and Brian, came on
-            board, each bringing their own style and feel, pushing the band into a heavier, more
-            dynamic direction and adding new dimensions to the music.
+            of Saturn. Following a period of reflection, guitarist Niki came on board, bringing his
+            own style and feel, pushing the band into a heavier, more dynamic direction and adding
+            new dimensions to the music.
           </p>
           <p>
-            By spring 2026 the new lineup is gig‑ready and looking ahead, with plans for more shows,
-            new material and a fresh chapter for Fall of Saturn. Turn up the volume, come find us on
-            the road, and stay tuned for what comes next.
+            On October the 23rd 2026 they released VIGIL, a three‑track EP. With more shows and new
+            material on the way, it’s a fresh chapter for Fall of Saturn. Turn up the volume, come
+            find us on the road, and stay tuned for what comes next.
           </p>
         </div>
       </div>
